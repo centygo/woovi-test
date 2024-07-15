@@ -8,28 +8,10 @@ export default function creditCard() {
   const paymentString = sessionStorage.getItem("payment");
   const payment = paymentString ? JSON.parse(paymentString) : null;
 
-  function transformObject(input: any) {
-    const { partValue, part } = input;
+  const paymentStatusString = sessionStorage.getItem("payment-status");
+  const paymentStatus = paymentStatusString ? JSON.parse(paymentStatusString) : null;
 
-    const output = [
-      {
-        label: "1ª entrada no Pix",
-        value: partValue,
-        paid: false,
-        method: "pix",
-      },
-      {
-        label: "2ª no cartão",
-        value: (part - 1) * partValue,
-        paid: false,
-        method: "credit",
-      },
-    ];
-
-    return output;
-  }
-
-  return (
+   return (
     <Stack>
       <Header text={`João, pague o restante em ${payment.part}x no cartão`} />
       <Stack spacing={2}>
@@ -72,7 +54,7 @@ export default function creditCard() {
       </Stack>
 
       <PaymentInfo
-        payments={transformObject(payment)}
+        payments={paymentStatus}
         totalValue={payment.totalValue}
       />
 

@@ -27,6 +27,7 @@ export default function PaymentInfo({
 }: PaymentInfoProps) {
   const method = sessionStorage.getItem("method");
 
+  
   return (
     <Stack
       direction="column"

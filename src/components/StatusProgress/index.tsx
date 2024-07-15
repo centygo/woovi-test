@@ -16,7 +16,9 @@ export default function StatusProgress({
   paid,
   method,
   actualMethod,
-}: PaymentProps) {
+}: PaymentProps){
+  console.log(paid);
+  
   return (
     <Stack width="100%" alignItems="top">
       <Stack direction="row" alignItems="center" width="100%">
