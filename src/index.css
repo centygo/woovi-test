@@ -1,0 +1,10 @@
+
+body {
+  margin: 0;
+  padding: 20px;
+  text-decoration: none;
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
